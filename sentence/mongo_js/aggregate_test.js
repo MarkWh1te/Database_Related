@@ -1,0 +1,21 @@
+db.Z3_EQUITY_HISTORY.aggregate([
+    {
+        $match:{
+            "innerCode":"000001.SZ"
+        },
+    },
+    {
+        $project:{
+            "other":{$add:[
+                {$cond:["$mkt2_idx.mic_ttm",1,0]},
+                {$cond:["$mkt2_idx.cash_ttm",2,0]},
+            ]}
+        }
+    },
+    {
+        $group:{
+            _id:"$other",
+            countx:{$sum:1}
+        }
+    }
+    ])
