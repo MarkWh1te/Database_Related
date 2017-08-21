@@ -1,0 +1,4 @@
+SELECT  Table_Name, table_rows
+FROM    INFORMATION_SCHEMA.TABLES
+WHERE   TABLE_TYPE = 'BASE TABLE'
+AND     TABLE_SCHEMA = 'pgenius';
