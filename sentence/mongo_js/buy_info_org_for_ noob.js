@@ -1,0 +1,1 @@
+db.Z3_FUND_BUY_INFO_ORG.find({innerCode:'519122.CW'},{})
